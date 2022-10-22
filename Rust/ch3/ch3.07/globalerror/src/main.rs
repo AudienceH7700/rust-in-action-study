@@ -15,7 +15,7 @@ fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
 }
 
 #[allow(unused_mut)]
-fn main() {
+fn main() { 
     let mut f = File;
     let mut buffer = vec![];
 

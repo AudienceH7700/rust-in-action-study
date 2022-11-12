@@ -1,10 +1,10 @@
 #[derive(Debug)]
 struct CubeSat {
     id : u64,
-    mailbox : MailBox,
+    Mailbox : Mailbox,
 }
 #[derive(Debug)]
-struct MailBox {
+struct Mailbox {
     messages : Vec<Message>,
 }
 
@@ -14,13 +14,13 @@ struct GroundStation;
 
 impl GroundStation {
     fn send(&self, to: &mut CubeSat, msg: Message){
-        to.mailbox.messages.push(msg);
+        to.Mailbox.messages.push(msg);
     }
 }
 
 impl CubeSat {
     fn recv(&mut self) -> Option<Message> {
-        self.mailbox.messages.pop()
+        self.Mailbox.messages.pop()
     }
 }
 
@@ -28,7 +28,7 @@ fn main() {
     let base = GroundStation {};
     let mut sat_a = CubeSat {
         id : 0,
-        mailbox : MailBox{messages : vec![]},
+        Mailbox : Mailbox{messages : vec![]},
     };
 
     println!("t0 : {:?}", sat_a);
